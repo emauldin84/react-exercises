@@ -9,12 +9,29 @@ class BouncingCounter extends React.Component {
     }
 
     componentDidMount() {
-        let status = true;
-        setInterval(() => {
+        let interval;
+        interval = setInterval(() => {
             this.setState({
                 number: this.state.number + 10
             })
-        }, 1000);
+        }, 500);
+
+        if (this.state.number === 100) {
+            clearInterval(interval);
+            interval = setInterval(() => {
+                this.setState({
+                    number: this.state.number - 10
+                })
+            }, 500);
+        }
+        if (this.state.number === 0) {
+            clearInterval(interval);
+            interval = setInterval(() => {
+                this.setState({
+                    number: this.state.number + 10
+                })
+            }, 500);
+        }
         
     }
 

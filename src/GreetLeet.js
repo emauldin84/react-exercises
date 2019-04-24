@@ -17,7 +17,7 @@ function toLeet(theName) {
             nameUpper = nameUpper.replace(nameUpper[i], leetLetters[nameUpper[i]])
         }
     }
-    console.log(nameUpper)
+    // console.log(nameUpper)
     return nameUpper
 
 
